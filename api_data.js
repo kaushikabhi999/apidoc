@@ -307,7 +307,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 400 Bad Request\n {\n     \"data\": {\n         \"body\": [\n             \"The body is required.\"\n         ],\n         \"color\": [\n             \"The color is required.\"\n         ]\n     }\n }",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"data\": {\n         \"body\": [\n             \"The body field is required\"\n         ],\n         \"color\": [\n             \"The color field is required\"\n         ]\n     }\n }",
           "type": "json"
         }
       ]
