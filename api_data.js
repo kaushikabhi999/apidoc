@@ -169,5 +169,150 @@ define({ "api": [
     },
     "filename": "../server/app/Http/Controllers/Auth/RegisterController.php",
     "groupTitle": "Auth"
+  },
+  {
+    "type": "post",
+    "url": "/api/add_car",
+    "title": "Add a Car",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Device-Type",
+            "description": "<p>Device Type ios/android.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "App-Version",
+            "description": "<p>Version Code 1.0.0.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  'content-type': 'application/json',\n  'accept': 'application/json',\n  'app-version': '1.0.0',\n  'device-type': 'android'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "name": "AddCar",
+    "group": "Car",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "brand_id",
+            "description": "<p>id of Brand Name.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "year",
+            "description": "<p>Year of Car make.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "fuel_type",
+            "description": "<p>Fuel Type 1 - Petrol, 2 - Desiel.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "mileage",
+            "description": "<p>Mileage of Car.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "odometer",
+            "description": "<p>Odometer of Car.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "engine",
+            "description": "<p>Engine type of Car.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "body",
+            "description": "<p>Body of Car.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "color",
+            "description": "<p>Color of Car.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "km_driven",
+            "description": "<p>Kilometers driven by Car.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "total_owner",
+            "description": "<p>Total owners of Car.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>Title of Car.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description of Car.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"message\": \"Car added successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n {\n     \"data\": {\n         \"body\": [\n             \"The body is required.\"\n         ],\n         \"color\": [\n             \"The color is required.\"\n         ]\n     }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../server/app/Http/Controllers/CarController.php",
+    "groupTitle": "Car"
   }
 ] });
