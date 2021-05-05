@@ -3196,6 +3196,143 @@
   },
   {
     "type": "delete",
+    "url": "/user/clear_all_notifications",
+    "title": "Clear All Notifications",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Device-Type",
+            "description": "<p>Device Type ios/android.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "App-Version",
+            "description": "<p>Version Code 1.0.0.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Accept-Language",
+            "description": "<p>Language Code en OR ar.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer eyJhbGciOiJIUzI1NiI...............lREODosHjzx95uM-jA.</p>"
+          }
+        ]
+      }
+    },
+    "version": "2.0.0",
+    "name": "ClearAllNotifications",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"message\": \"Success\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n  \"message\": \"Something went wrong\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Controllers/Http/UserController.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "delete",
+    "url": "/user/clear_notification",
+    "title": "Clear Notification",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Device-Type",
+            "description": "<p>Device Type ios/android.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "App-Version",
+            "description": "<p>Version Code 1.0.0.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Accept-Language",
+            "description": "<p>Language Code en OR ar.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer eyJhbGciOiJIUzI1NiI...............lREODosHjzx95uM-jA.</p>"
+          }
+        ]
+      }
+    },
+    "version": "2.0.0",
+    "name": "ClearNotification",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "notification_id",
+            "description": "<p>id of Notification.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"message\": \"Success\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n  \"message\": \"Something went wrong\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Controllers/Http/UserController.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "delete",
     "url": "/user/delete_signature",
     "title": "Delete Signature",
     "header": {
@@ -3316,6 +3453,68 @@
     "groupTitle": "User"
   },
   {
+    "type": "get",
+    "url": "/user/notifications",
+    "title": "Notifications List",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Device-Type",
+            "description": "<p>Device Type ios/android.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "App-Version",
+            "description": "<p>Version Code 1.0.0.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Accept-Language",
+            "description": "<p>Language Code en OR ar.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer eyJhbGciOiJIUzI1NiI...............lREODosHjzx95uM-jA.</p>"
+          }
+        ]
+      }
+    },
+    "version": "2.0.0",
+    "name": "NotificationsList",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"data\": [\n         {\n             \"id\": 1,\n             \"data\": {},\n             \"notification\": {},\n             \"user_id\": 21,\n             \"is_read\": 0\n         },\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n  \"message\": \"Something went wrong\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Controllers/Http/UserController.js",
+    "groupTitle": "User"
+  },
+  {
     "type": "put",
     "url": "/user/set_primary_signature",
     "title": "Set Primary Signature",
@@ -3383,6 +3582,81 @@
         {
           "title": "Error-Response:",
           "content": "HTTP/1.1 400 Bad Request\n{\n  \"message\": \"Something went wrong, please try again after some time\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Controllers/Http/UserController.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "put",
+    "url": "/user/read_notification",
+    "title": "Read Notification",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Device-Type",
+            "description": "<p>Device Type ios/android.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "App-Version",
+            "description": "<p>Version Code 1.0.0.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Accept-Language",
+            "description": "<p>Language Code en OR ar.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer eyJhbGciOiJIUzI1NiI...............lREODosHjzx95uM-jA.</p>"
+          }
+        ]
+      }
+    },
+    "version": "2.0.0",
+    "name": "ReadNotifications",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "notification_id",
+            "description": "<p>id of Notification.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"message\": \"Success\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n  \"message\": \"Something went wrong\",\n}",
           "type": "json"
         }
       ]
@@ -3481,7 +3755,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n    \"message\": \"Phone number updated\",\n}",
+          "content": "HTTP/1.1 200 OK\n{\n    \"data\": [\n         {\n             \"id\": 1,\n             \"name\": \"Jordan\",\n             \"uid\": \"fa3e3c91-df2e-477e-8e59-03d679688ff5\",\n             \"user_id\": 21,\n             \"url\": \"https://tawqi3i.s3.ap-south-1.amazonaws.com/documents/doc-a2f0c055-d5d3-443d-b519-2b51ee3c4e79.pdf\",\n             \"primary\": \"+962\"\n         },\n         {\n             \"id\": 2,\n             \"name\": \"Egypt\",\n             \"uid\": \"fa3e3c91-df2e-477e-8e59-03d679688ff5\",\n             \"user_id\": 21,\n             \"url\": \"https://tawqi3i.s3.ap-south-1.amazonaws.com/documents/doc-a2f0c055-d5d3-443d-b519-2b51ee3c4e79.pdf\",\n             \"primary\": \"+962\"\n         },\n         .\n         .\n         .\n         .\n         {\n             \"id\": 21,\n             \"name\": \"Comoros\",\n             \"uid\": \"fa3e3c91-df2e-477e-8e59-03d679688ff5\",\n             \"user_id\": 21,\n             \"url\": \"https://tawqi3i.s3.ap-south-1.amazonaws.com/documents/doc-a2f0c055-d5d3-443d-b519-2b51ee3c4e79.pdf\",\n             \"primary\": \"+962\"\n         }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -3490,7 +3764,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 400 Bad Request\n{\n  \"message\": \"Something went wrong, please try again after some time\",\n}",
+          "content": "HTTP/1.1 400 Bad Request\n{\n  \"message\": \"Something went wrong\",\n}",
           "type": "json"
         }
       ]
