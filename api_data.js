@@ -3454,6 +3454,68 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/user/notifications_count",
+    "title": "Notifications Count",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Device-Type",
+            "description": "<p>Device Type ios/android.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "App-Version",
+            "description": "<p>Version Code 1.0.0.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Accept-Language",
+            "description": "<p>Language Code en OR ar.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer eyJhbGciOiJIUzI1NiI...............lREODosHjzx95uM-jA.</p>"
+          }
+        ]
+      }
+    },
+    "version": "2.0.0",
+    "name": "NotificationsCount",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"count\": 10\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n  \"message\": \"Something went wrong\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Controllers/Http/UserController.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
     "url": "/user/notifications",
     "title": "Notifications List",
     "header": {
@@ -3497,7 +3559,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n    \"data\": [\n         {\n             \"id\": 1,\n             \"data\": {},\n             \"notification\": {},\n             \"user_id\": 21,\n             \"is_read\": 0\n         },\n    ]\n}",
+          "content": "HTTP/1.1 200 OK\n{\n    \"data\": {\n        \"rows\": [\n             {\n                 \"id\": 1,\n                 \"data\": {},\n                 \"notification\": {},\n                 \"user_id\": 21,\n                 \"is_read\": 0\n             },\n             {\n                ...\n             },\n         ],\n         \"totalNumber\": '50',\n         \"perPage\": 10,\n         \"currentPage\": 1,\n         \"qs\": {},\n         \"url\": '/',\n         \"firstPage\": 1,\n         \"isEmpty\": false,\n         \"total\": 50,\n         \"hasTotal\": true,\n         \"lastPage\": 5,\n         \"hasMorePages\": true,\n         \"hasPages\": true\n    }\n}",
           "type": "json"
         }
       ]
