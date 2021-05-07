@@ -2878,6 +2878,13 @@
             "optional": true,
             "field": "tags",
             "description": "<p>tags of document.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "upload_type",
+            "description": "<p>upload type 0 - Uploaded, 1 - Scanned, 2 - Created</p>"
           }
         ]
       }
@@ -3891,6 +3898,13 @@
             "optional": true,
             "field": "family_name",
             "description": "<p>Family name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "File",
+            "optional": true,
+            "field": "profile_image",
+            "description": "<p>Profile image of the user</p>"
           }
         ]
       },
