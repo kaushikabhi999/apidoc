@@ -2214,6 +2214,152 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/doc/edit_signer_sign",
+    "title": "Edit Signer's Sign",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "App-Version",
+            "description": "<p>Version Code 1.0.0.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Accept-Language",
+            "description": "<p>Language Code en OR ar.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer eyJhbGciOiJIUzI1NiI...............lREODosHjzx95uM-jA.</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "name": "EditSignerSign",
+    "group": "Doc",
+    "description": "<p>Save Signer's Signature and it's position in the doc.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "sign_id",
+            "description": "<p>Id of signature</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "docUid",
+            "description": "<p>Uid of document on which signature will be appended.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "base64Sign",
+            "description": "<p>Signer's signature in base64 format.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>Page index of document</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageHeight",
+            "description": "<p>Height of page</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageWidth",
+            "description": "<p>Width of page</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "height",
+            "description": "<p>Height of signature</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "width",
+            "description": "<p>Width of signature</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "x",
+            "description": "<p>Position x of signature</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "y",
+            "description": "<p>Position y of signature</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "extension",
+            "description": "<p>Extension of Base64 Image</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n  \"sign_id\": 1,\n  \"docUid\": \"a2f0c055-d5d3-443d-b519-2b51ee3c4e79\",\n  \"base64Sign\": \"data:image/png;base64,iVBORw0KGg.....\",\n  \"page\": 2,\n  \"pageHeight\": 200,\n  \"pageWidth\": 120,\n  \"page\": 2,\n  \"height\": 40,\n  \"width\": 70,\n  \"x\": 270,\n  \"y\": 560,\n  \"extension\": \"jpeg\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n   \"message\": \"Signature saved successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n  \"message\": \"Document not found\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Controllers/Http/DocController.js",
+    "groupTitle": "Doc"
+  },
+  {
+    "type": "post",
     "url": "/doc/reject_document",
     "title": "Reject a Document",
     "header": {
