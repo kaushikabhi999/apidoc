@@ -1968,6 +1968,53 @@ define({ "api": [
     "groupTitle": "Doc"
   },
   {
+    "type": "delete",
+    "url": "/doc/delete_signer_sign/12",
+    "title": "Delete Signer's Sign",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "App-Version",
+            "description": "<p>Version Code 1.0.0.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Accept-Language",
+            "description": "<p>Language Code en OR ar.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer eyJhbGciOiJIUzI1NiI...............lREODosHjzx95uM-jA.</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "name": "DeleteSignerSign",
+    "group": "Doc",
+    "description": "<p>Delete Signer's Signature.</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n   \"message\": \"Sign deleted successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Controllers/Http/DocController.js",
+    "groupTitle": "Doc"
+  },
+  {
     "type": "put",
     "url": "/doc/deny_admin_access",
     "title": "Deny Admin Access for document",
